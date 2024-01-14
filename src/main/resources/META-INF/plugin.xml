@@ -1,7 +1,7 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.yotamalon.dubtfs</id>
-    <name>dubTFs Template</name>
+    <name>DubTFs</name>
     <vendor>yotamalon</vendor>
 
     <depends>com.intellij.modules.platform</depends>
@@ -9,10 +9,13 @@
     <resource-bundle>messages.MyBundle</resource-bundle>
 
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.yotamalon.dubtfs.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
     </extensions>
 
     <applicationListeners>
-        <listener class="com.github.yotamalon.dubtfs.listeners.MyApplicationActivationListener" topic="com.intellij.openapi.application.ApplicationActivationListener"/>
     </applicationListeners>
+    <actions>
+        <action id="com.github.yotamalon.dubtfs.MarkAction" class="com.github.yotamalon.dubtfs.MarkAction" text="WTF">
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+        </action>
+    </actions>
 </idea-plugin>
